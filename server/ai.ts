@@ -5,7 +5,6 @@ import { anthropic } from '@ai-sdk/anthropic';
 
 import { generateText } from 'ai';
 
-
 export async function getAIResponse(prompt: string) {
     try {
         
@@ -23,10 +22,13 @@ export async function getAIResponse(prompt: string) {
 
         // providers anthropic
         const {text} = await generateText({
-            model: anthropic('claude-3-haiku-20240307'),
-            prompt, 
+          
+            model: anthropic('claude-3-opus-20240229'),
+            prompt,
         });
-  return text;
+    
+
+  return text ;
     } catch (error) {
         console.log(error);
         return "Erreur de génération de texte";
