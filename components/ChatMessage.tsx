@@ -130,7 +130,7 @@ export default function ChatMessage() {
                 <CardTitle className="text-xl text-center flex justify-center items-center gap-2 underline">
                     <p className="flex">Jangu-
                         <span className="text-blue-500 flex">Bi 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a5fb4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-library-big"><rect width="8" height="18" x="3" y="3" rx="1"/><path d="M7 3v18"/><path d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a5fb4" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-library-big"><rect width="8" height="18" x="3" y="3" rx="1"/><path d="M7 3v18"/><path d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"/></svg>
                         </span>
                      </p> 
                     <span className="text-lg">Assistant</span>
@@ -155,7 +155,7 @@ export default function ChatMessage() {
                         </div>
                         <div className="flex gap-4 items-center">
                             <Image
-                                src="https://randomuser.me/api/portraits/men/1.jpg"
+                                src="/robot.avif"
                                 alt="User Photo"
                                 width={48}
                                 height={48}
@@ -170,8 +170,8 @@ export default function ChatMessage() {
                 {prompt && !messages.find((msg) => msg.prompt === prompt) && (
                     <div className="flex gap-4 items-center">
                         <Image
-                            src="https://randomuser.me/api/portraits/men/1.jpg"
-                            alt="User Photo"
+                            src="/robot.avif"
+                            alt="Robot photo"
                             width={48}
                             height={48}
                             className="rounded-full"
