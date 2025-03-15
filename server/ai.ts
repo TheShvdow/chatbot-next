@@ -6,6 +6,7 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
 export async function getAIResponse(prompt: string) {
+       
     try {
         
         // providers openai
@@ -22,7 +23,6 @@ export async function getAIResponse(prompt: string) {
 
         // providers anthropic
         const {text} = await generateText({
-          
             model: anthropic('claude-3-opus-20240229'),
             prompt,
         });
