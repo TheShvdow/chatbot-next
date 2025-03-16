@@ -1,9 +1,9 @@
-
 import { getAIResponse } from "@/server/ai";
 import { useState, useRef, ChangeEvent } from "react";
 import Image from "next/image";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import ReactMarkdown from "react-markdown";
 
 export default function ChatMessage() {
     const [messages, setMessages] = useState<{ prompt: string; response: string }[]>([]);
@@ -61,14 +61,17 @@ export default function ChatMessage() {
                         <div className="flex gap-4 items-center">
                             <Image
                                 src="/robot.avif"
-                                alt="User Photo"
+                                alt="Robot photo"
                                 width={48}
                                 height={48}
                                 className="rounded-full"
                             />
-                            <p className="text-gray-700">
-                                <span className="font-bold">AI :</span> {msg.response}
-                            </p>
+                            <div className="text-gray-700">
+                                <span className="font-bold">AI :</span>
+                                <div className="prose max-w-none">
+                                    <ReactMarkdown>{msg.response}</ReactMarkdown>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 ))}
