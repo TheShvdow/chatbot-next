@@ -104,7 +104,7 @@ export default function ChatMessage() {
                         className="flex-grow"
                     />
                 </div>
-                <div className="absolute -bottom-7 left-70 right-10 flex justify-center items-center py-4">
+                <div className="absolute -bottom-3 left-70 right-10 flex justify-center items-center py-4">
                     {/* Bouton pour charger un fichier */}
                     <div className="flex items-center gap-1 cursor-pointer" onClick={handleFileUpload}>
                         <Image src="/image.png" alt="Upload File" width={14} height={14} />
