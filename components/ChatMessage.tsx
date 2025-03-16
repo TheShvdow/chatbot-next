@@ -40,7 +40,7 @@ export default function ChatMessage() {
                      </p> 
                     <span className="text-lg">Assistant</span>
                 </CardTitle>
-            </CardHeader>
+            </CardHeader>   
             <CardContent className="flex flex-col gap-4 max-h-96 overflow-y-auto">
                 {messages.map((msg, index) => (
                     <div key={index} className="flex flex-col items-end gap-5">
@@ -58,7 +58,7 @@ export default function ChatMessage() {
                                 />
                             </div>
                         </div>
-                        <div className="flex gap-4 items-center">
+                        <div className="flex gap-4 items-start">
                             <Image
                                 src="/robot.avif"
                                 alt="Robot photo"
@@ -69,7 +69,28 @@ export default function ChatMessage() {
                             <div className="text-gray-700">
                                 <span className="font-bold">AI :</span>
                                 <div className="prose max-w-none">
-                                    <ReactMarkdown>{msg.response}</ReactMarkdown>
+                                    <ReactMarkdown
+                                        components={{
+                                            h1: (props) => <h1 className="text-2xl font-bold my-4" {...props} />,
+                                            h2: (props) => <h2 className="text-xl font-semibold my-3" {...props} />,
+                                            p: (props) => <p className="my-2 leading-7" {...props} />,
+                                            li: (props) => (
+                                                <li className="ml-4 my-2 list-disc" {...props} />
+                                            ),
+                                            ul: (props) => <ul className="ml-8" {...props} />,
+                                            ol: (props) => <ol className="ml-8" {...props} />,
+                                            code: ({ children, ...props }) => (
+                                               <div className="bg-gray-100 p-1 rounded">
+                                               <code className="bg-gray-200 px-1 rounded" {...props}>
+                                                    {children as string}
+                                                </code>
+                                                </div>
+                                            )
+                                            // Ajoutez d'autres éléments (blockquote, code…) si nécessaire
+                                        }}
+                                    >
+                                        {msg.response}
+                                    </ReactMarkdown>
                                 </div>
                             </div>
                         </div>
